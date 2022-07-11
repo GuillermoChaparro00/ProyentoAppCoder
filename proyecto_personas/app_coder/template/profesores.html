@@ -1,0 +1,53 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+
+{% block contenidoBuscador %}
+<form action="buscar_profesor" method="GET">
+  <div class="mb-3">
+      <label  class="form-label">Nombre del Profesor</label>
+      <input  class="form-control"  name="nombre" >
+      
+    </div>
+  
+  <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+
+{% endblock %}
+
+
+
+{% block contenido %}
+<center>
+<div class="card w-75">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">DNI</th>
+      <th scope="col">Nacimiento</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for x in profesores%}
+    <tr>
+      <th scope="row">{{x.nombre}}</th>
+      <td>{{x.apellido}}</td>
+      <td>{{x.dni}}</td>
+      <td>{{x.nacimiento}}</td>
+      <td><a href="{%url 'eliminar_profesor' x.id%}">Eliminar</a></td>
+      <td><a href="{%url 'editar_profesor' x.id%}">Editar</a></td> 
+      
+    </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+</div><a class="btn btn-outline-secondary" href="{% url 'cargar_profesores'%}">Cargar nuevo profesor</a></center>
+
+
+{% endblock %}
+
+

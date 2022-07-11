@@ -1,0 +1,49 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+
+
+{% block contenidoBuscador %}
+<form action="buscar_curso" method="GET">
+  <div class="mb-3">
+      <label  class="form-label">Nombre del Curso</label>
+      <input  class="form-control"  name="curso" >
+      
+    </div>
+  
+  <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+
+{% endblock %}
+
+
+{% block contenido %}
+<center>
+<div class="card w-75">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Camada</th>
+      <th scope="col">Turno</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for x in cursos%}
+    <tr>
+      <th scope="row">{{x.nombre}}</th>
+      <td>{{x.camada}}</td>
+      <td>{{x.turno}}</td>
+      <td><a href="{%url 'eliminar_curso' x.id%}">Eliminar</a></td>
+      <td><a href="{%url 'editar_curso' x.id%}">Editar</a></td> 
+           
+    </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+</div><a class="btn btn-outline-secondary" href="{% url 'cargar_curso'%}">Cargar nuevo curso</a></center>
+
+
+{% endblock %}
