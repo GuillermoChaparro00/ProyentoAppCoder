@@ -1,1 +1,28 @@
+Proyecto Con django con distintas vistas
+
+El usuario podra naver si estar registrado pero solo podra acceder a   la fuccion buscar
+donde podra buscar por nombre a los alumnos,profesores y cursos
+
+/app_coder/cursos
+/app_coder/alumnos
+/app_coder/profesores
+/app_coder/login
+
+el usuario registrado podra hacecer a las fuccions para elimiar, editar y agregar cualquiera de los anteriores 
+
+/app_coder/editar_alumno/
+/app_coder/editar_profesor/
+/app_coder/editar_curso/
+
+tambie contad con la vita al perfil donde podra editar sus datos y podra salir de la sesion
+
+/app_coder/perfil
+/app_coder/EditarPerfil
+
+
+Los usuarios no registrados cuentan con esas limitantes a la hora de navegar.
+
+Por ultimo cuenta con 
+/app_coder/about 
+la cual cuenta un poco sobre el crador de la pagina
 
